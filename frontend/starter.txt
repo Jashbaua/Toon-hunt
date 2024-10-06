@@ -1,0 +1,2 @@
+npm create vite@latest . -- --template react
+npm install vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event --save-dev
