@@ -10,7 +10,7 @@
     "installtest": "npm install supertest --save-dev",
     "installdb": "npm install pg @prisma/client && npm install prisma --save-dev && npx prisma init",
     "fullsetup": "npm run installdotenv && npm install auth && npm run installexpress && npm run installtest && npm run installdb",
-    "start": "npx prisma migrate dev --name init && node run app.js"
+    "start": "npx prisma migrate dev --name init && node app.js"
   },
   "keywords": [],
   "author": "",
