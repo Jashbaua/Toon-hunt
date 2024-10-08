@@ -7,7 +7,7 @@ const rootRouter=require('./routers/rootRouter')
 const app = express()
 dotenv.config()
 app.use(cors({
-    origin: process.env.CLIENT_URL
+    origin: '*'
 }))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
