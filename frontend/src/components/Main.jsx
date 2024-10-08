@@ -15,7 +15,6 @@ export default function Main({ finisher }) {
 		const y = e.clientY - rect.top;
 		setNormalizedX((1000 * x) / e.target.offsetWidth);
 		setNormalizedY((1000 * y) / e.target.offsetHeight);
-		console.log(normalizedX, normalizedY);
 		const div = divRef.current;
 		const drop = dropRef.current;
 

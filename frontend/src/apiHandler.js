@@ -1,24 +1,29 @@
 let time = 0;
-let interval
+let interval;
 export default {
-    getTime: (callback) => {
-        setTimeout(() => {
-            callback(time);
-        }, 3000);
+	getTime: (callback) => {
+		callback(time);
+	},
+	stopTimer: () => {
+		clearInterval(interval);
+		time = 0;
+	},
+	startTimer: () => {
+		interval = setInterval(() => time++, 1000);
+	},
+	addScore: (name, timeTaken) => {
+		fetch(`${import.meta.env.VITE_SERVER_URL}/insert`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ name, timeTaken }),
+		});
+	},
+    async getData() {
+        let response = await fetch(`${import.meta.env.VITE_SERVER_URL}/leaderboard`)
+        let data = await response.json()
+        data = data.map((score, index) => ({...score,rank:index+1}))
+        return data
     },
-    stopTimer: () => {
-        setTimeout(() => {
-            clearInterval(interval)
-            time=0
-        }, 3000);
-    },
-    startTimer: () => {
-        setTimeout(() => {
-            interval=setInterval(()=>time++,1000)
-        }, 3000);
-    },
-    addScore: (name,timeTaken) => {
-        timeTaken = name
-        name=timeTaken
-    }
-}
+};

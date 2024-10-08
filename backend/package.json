@@ -5,10 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "installdotenv": "npm install dotenv --save",
-    "installexpress": "npm install express ejs express-validator cors",
+    "installexpress": "npm install express ejs express-validator express-async-handler cors",
     "installauth": "npm install express-session passport passport-local",
     "installtest": "npm install supertest --save-dev",
-    "installdb": "npm install pg && npm install prisma --save-dev && npx prisma init",
+    "installdb": "npm install pg @prisma/client && npm install prisma --save-dev && npx prisma init",
     "fullsetup": "npm run installdotenv && npm install auth && npm run installexpress && npm run installtest && npm run installdb"
   },
   "keywords": [],
@@ -16,10 +16,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^5.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
+    "express-async-handler": "^1.2.0",
     "express-session": "^1.18.0",
     "express-validator": "^7.2.0",
     "passport": "^0.7.0",

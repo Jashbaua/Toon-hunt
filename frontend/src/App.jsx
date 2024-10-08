@@ -26,7 +26,8 @@ function App() {
 		setIsRunning(true);
 		setIsFinished(false);
   }
-  function handleSubmit(e) {
+	function handleSubmit(e) {
+	  if(nameRef.current.value=='')return
     e.preventDefault()
     api.addScore(nameRef.current.value, endTime)
     navigate('leaderboard')
@@ -48,7 +49,7 @@ function App() {
 	useEffect(() => {
 		async function endGame() {
 			if (isFinished) {
-				setTimer(api.getTime());
+				api.getTime(setTimer);
 				endDialogRef.current.showModal();
 				api.stopTimer();
 				setEndTime(timer);
@@ -73,7 +74,7 @@ function App() {
 			<Main finisher={setIsFinished}></Main>
 			<dialog ref={endDialogRef} className="endDialog">
 				<label htmlFor="name">Name: </label>
-				<input type="text" ref={nameRef} id="name" />
+				<input type="text" ref={nameRef} id="name" required/>
           <p>Time taken</p>
           <p>{endTime+'s'}</p>
           <button onClick={handleSubmit}>Leaderboard</button>
