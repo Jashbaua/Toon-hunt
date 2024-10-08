@@ -1,27 +1,82 @@
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Courier New", Courier, monospace;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-*{
-  margin: 0;
-  padding: 0px;
+* {
+	margin: 0;
+	padding: 0px;
 }
 
-ol[role="list"], ul[role="list"] {
-  list-style: none;
-  padding-inline: 0;
+ol[role="list"],
+ul[role="list"] {
+	list-style: none;
+	padding-inline: 0;
 }
 
-p, h1, h2, h3, h4, h5, h6, input, button, textarea, select {
-  font: inherit;
-  overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	overflow-wrap: break-word;
 }
 
-img, picture, video, canvas, svg {
-  max-width: 100%;
+img,
+picture,
+video,
+canvas,
+svg {
+	max-width: 100%;
+}
+
+dialog {
+	top: 50%;
+	left: 50%;
+  transform: translate(-50%,-50%);
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(183, 183, 183);
+  text-align: center;
+}
+dialog::backdrop{
+	backdrop-filter: blur(10px);
+}
+dialog input{
+  border: none;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+dialog button{
+	padding: 5px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	box-shadow: 3px 3px 3px gray;
+	transition: background-color 0.1s ease;
+}
+dialog p:first-of-type{
+	margin-top: 10px;
+}
+dialog button:hover{
+	background-color: rgb(200, 200, 200);
+}
+dialog button:active{
+	background-color: white;
+	box-shadow: none;
 }

@@ -1,0 +1,106 @@
+.main {
+	position: relative;
+}
+.select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	background-color: rgb(183, 183, 183);
+	transform: scale(0);
+}
+.select.animate {
+	animation: grow 0.5s ease-in-out forwards;
+}
+@keyframes grow {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0.8;
+	}
+}
+
+.select.hideAnimate {
+	animation: grow 0.2s ease-in-out reverse forwards;
+}
+.select.wrongAnimate {
+    background-color: red;
+    opacity: 0.8;
+	animation: wrongShake 0.2s 2 ease backwards;
+}
+
+@keyframes wrongShake {
+	0% {
+		transform: translateX(0px);
+	}
+	25% {
+		transform: translateX(-10%);
+	}
+	50% {
+		transform: translateX(10%);
+	}
+	75% {
+		transform: translateX(-10%);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+.image:hover {
+	cursor: crosshair;
+}
+
+.drop {
+	position: absolute;
+	background-color: rgb(183, 183, 183);
+	text-align: center;
+	padding: 5px;
+	border-radius: 10px;
+	transform-origin: top;
+	transform: scale(0);
+}
+.drop li {
+	transition: background-color 0.5s ease;
+	border-radius: 5px;
+	padding: 0px 5px;
+}
+.drop li:hover {
+	background-color: rgb(148, 148, 148);
+}
+.drop li:active {
+	background-color: rgb(219, 219, 219);
+}
+.drop.animate {
+	animation: drop-grow 0.5s ease-in-out forwards;
+}
+@keyframes drop-grow {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1.2);
+		opacity: 1;
+	}
+	75% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.drop.hideAnimate {
+	animation: drop-grow 0.4s ease-in-out reverse forwards;
+}
+
