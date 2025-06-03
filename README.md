@@ -28,7 +28,7 @@
   <ul>
     <li><strong>Backend:</strong> Node.js, Express</li>
     <li><strong>Frontend:</strong> HTML5, CSS3, vanilla JavaScript</li>
-    <li><strong>Database:</strong> MongoDB (Mongoose ODM)</li>
+    <li><strong>Database:</strong> PostgreSQL (Prisma ODM)</li>
     <li><strong>Deployment:</strong> Cloudflare</li>
   </ul>
 
