@@ -47,7 +47,7 @@ npm install</code></pre>
     <li>
       <strong>Configure environment variables:</strong>
       <p>Create a <code>.env</code> file in the root directory with the following variables (example):</p>
-      <pre><code>MONGO_URI=&lt;your-mongodb-connection-string&gt;
+      <pre><code>DATABASE_URI=&lt;your-database-connection-string&gt;
 PORT=3000</code></pre>
     </li>
     <li>
